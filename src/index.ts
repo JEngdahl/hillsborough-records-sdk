@@ -1,0 +1,1 @@
+export const helloW = () => "Yo world, waddup?"
