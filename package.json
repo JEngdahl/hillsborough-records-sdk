@@ -1,0 +1,18 @@
+{
+  "name": "hillsborough-records-api",
+  "version": "1.0.0",
+  "description": "Query public records for hillsborough county",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "query",
+    "records",
+    "hillsborough",
+    "county",
+    "search"
+  ],
+  "author": "JEngdahl",
+  "license": "GPL-3.0-or-later"
+}
