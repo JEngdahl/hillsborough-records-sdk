@@ -2,7 +2,7 @@ import axios, { AxiosPromise } from 'axios';
 import { PartyNames, Name, SearchableParty } from "../types/search"
 import { SearchableDocument } from "../types/documents"
 export class Search {
-    #baseUrl: string = "https://pubrec6.hillsclerk.com/Public/ORIUtilities/DocumentSearch/api/"
+    #baseUrl: string = "https://pubrec6.hillsclerk.com/Public/ORIUtilities/DocumentSearch/api/Search"
     args: Record<string, unknown> = {}
 
     private extractName(name: Name) {
@@ -95,9 +95,7 @@ export class Search {
     }
 
     submit(): AxiosPromise {
-        return axios.post(this.#baseUrl, {
-            ...this.args
-        })
+        return axios.post(this.#baseUrl, this.args)
     }
 
 }

@@ -6,7 +6,7 @@ Searches are created as new Class instantiations
 
 ```ts
 import {Search, documents as d} from "hillsborough-records-api"
-const { args } = new Search()
+new Search()
     .from("06/01/2019")
     .to("12/22/2020")
     .name({ first: "Bob", last: "Smith" })
