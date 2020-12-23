@@ -31,6 +31,7 @@ export class PublicRecord {
 
     submit(): AxiosPromise[] {
         return this.records
+            .flat()
             .map(this.getRecordId)
             .map(id => axios.get(this.#baseUrl + id))
     }
