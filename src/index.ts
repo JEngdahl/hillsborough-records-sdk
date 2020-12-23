@@ -1,5 +1,7 @@
-export const helloW = () => "Yo world, waddup?"
+export * from "./types/documents"
+export * from "./types/search"
 
-import { documents } from "./types/documents"
+export { Search } from "./search"
+
 
 
