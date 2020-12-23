@@ -1,5 +1,5 @@
 export type Name = { first: string, last: string } | string
-export type PartyNames = Name | Array<Name>
+export type PartyNames = Name | Name[]
 
 export const party = { "DIRECT": "PARTY 1", "REVERSE": "PARTY 2" }
 export type PartyKey = keyof typeof party;

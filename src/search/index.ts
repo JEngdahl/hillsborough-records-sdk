@@ -1,6 +1,6 @@
 import { PartyNames, Name, SearchableParty } from "../types/search"
 import { SearchableDocument } from "../types/documents"
-export class search {
+export class Search {
     #baseUrl: string = "https://pubrec6.hillsclerk.com/Public/ORIUtilities/DocumentSearch/api/"
     args: Record<string, unknown> = {}
 
@@ -22,12 +22,12 @@ export class search {
         return this.extractName(input)
     }
 
-    name(input: PartyNames): search {
+    name(input: PartyNames): Search {
         this.args.PartyName = this._name(input)
         return this
     }
 
-    documents(DocType: SearchableDocument | SearchableDocument[]): search {
+    documents(DocType: SearchableDocument | SearchableDocument[]): Search {
         if (Array.isArray(DocType)) {
             this.args.DocType = DocType
         } else {
@@ -36,12 +36,12 @@ export class search {
         return this
     }
 
-    party(partyType: SearchableParty): search {
+    party(partyType: SearchableParty): Search {
         this.args.PartyType = partyType
         return this
     }
 
-    from(dateStr: string): search {
+    from(dateStr: string): Search {
         if (dateStr.match(/^\d{2}\/\d{2}\/\d{4}$/)) {
             this.args.RecordDateBegin = dateStr
         } else {
@@ -50,7 +50,7 @@ export class search {
         return this
     }
 
-    to(dateStr: string): search {
+    to(dateStr: string): Search {
         if (dateStr.match(/^\d{2}\/\d{2}\/\d{4}$/)) {
             this.args.RecordDateEnd = dateStr
         } else {
