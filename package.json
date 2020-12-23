@@ -1,6 +1,6 @@
 {
   "name": "hillsborough-records-api",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Query public records for hillsborough county",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
