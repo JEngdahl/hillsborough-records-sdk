@@ -58,5 +58,5 @@ export const documents = {
     "TERMINATION": "(TER) TERMINATION",
     "TRANSFER": "(TRA) TRANSFER"
 }
-export type DocumentKey = keyof typeof documents;
-export type SearchableDocument = typeof documents[DocumentKey];
+export type AllDocuments = keyof typeof documents;
+export type SearchableDocument = typeof documents[AllDocuments];
