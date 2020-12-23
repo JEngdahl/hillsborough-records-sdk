@@ -5,6 +5,7 @@ A package to search documents available in public record.
 Searches are created as new Class instantiations
 
 ```ts
+import {Search, documents as d} from "hillsborough-records-api"
 const { args } = new Search()
     .from("06/01/2019")
     .to("12/22/2020")
@@ -14,6 +15,7 @@ const { args } = new Search()
         d.MODIFICATION,
         d.LIS_PENDENS,
     ])
+    .submit()
 ```
 
 ## Search Options
