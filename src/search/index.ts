@@ -1,3 +1,4 @@
+import axios, { AxiosPromise } from 'axios';
 import { PartyNames, Name, SearchableParty } from "../types/search"
 import { SearchableDocument } from "../types/documents"
 export class Search {
@@ -57,6 +58,46 @@ export class Search {
             throw new Error("Please use the MM/DD/YYYY date format");
         }
         return this
+    }
+
+    price(lower: number = 0, upper: number): Search {
+        if (lower < 0) {
+            throw new Error("Lower price bound should be a positive whole number or zero.");
+        }
+        if (!upper || upper < 0) {
+            throw new Error("Upper price bound should be a positive whole number.");
+        }
+
+        this.args.SalesBottom = lower
+        this.args.SalesTop = upper
+
+        return this
+    }
+
+    case(caseNum: string): Search {
+        this.args.CaseNum = caseNum
+        return this
+    }
+
+    contains(term: string): Search {
+        this.args.Legal = ["CONTAINS", term]
+        return this
+    }
+
+    begins(term: string): Search {
+        this.args.Legal = ["BEGINS", term]
+        return this
+    }
+
+    equals(term: string): Search {
+        this.args.Legal = ["EQUALS", term]
+        return this
+    }
+
+    submit(): AxiosPromise {
+        return axios.post(this.#baseUrl, {
+            ...this.args
+        })
     }
 
 }

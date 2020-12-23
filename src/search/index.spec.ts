@@ -48,6 +48,7 @@ describe("Search", () => {
                 d.LIS_PENDENS,
             ])
 
+
         expect(args).toEqual({
             RecordDateBegin: '06/01/2019',
             RecordDateEnd: '12/22/2020',
